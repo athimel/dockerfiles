@@ -28,4 +28,3 @@ RUN chmod +x /root/run.sh
 
 EXPOSE 80
 ENTRYPOINT  ["/root/run.sh"]
-

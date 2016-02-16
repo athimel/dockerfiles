@@ -3,7 +3,7 @@ MAINTAINER Arnaud Thimel <a.thimel@gmail.com>
 
 ENV DEBIAN_FRONTEND noninteractive
 
-# Install Nginx and php5-fpm.
+# Install Wget in order to download dokuwiki
 RUN apt-get update && apt-get install -y wget && apt-get clean
 
 # Download and uncompress
@@ -19,4 +19,3 @@ RUN chown -R www-data:www-data /var/www/html
 
 EXPOSE 80
 ENTRYPOINT  ["/root/run.sh"]
-
