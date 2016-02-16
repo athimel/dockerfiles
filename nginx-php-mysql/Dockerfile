@@ -8,3 +8,4 @@ RUN apt-get update && apt-get install -y php5-mysql && apt-get clean
 
 EXPOSE 80
 ENTRYPOINT  ["/root/run.sh"]
+
