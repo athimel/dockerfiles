@@ -14,8 +14,8 @@ RUN echo "cgi.fix_pathinfo=0" >> /etc/php5/fpm/php.ini
 
 # Fix site configuration (remove default, and just enable php)
 RUN rm /etc/nginx/sites-enabled/default
-ADD taiste-site /etc/nginx/sites-available/taiste-site
-RUN ln -s /etc/nginx/sites-available/taiste-site /etc/nginx/sites-enabled/taiste-site
+ADD some-site /etc/nginx/sites-available/some-site
+RUN ln -s /etc/nginx/sites-available/some-site /etc/nginx/sites-enabled/some-site
 
 # Create test file
 RUN echo "<?php phpinfo(); ?>" > /var/www/html/taiste.php
