@@ -31,12 +31,6 @@ docker rm <id/name>
 #### Get container IP addresses
 
 ```
-docker exec -it <id/name> sh -c 'ifconfig  | grep -B 1 "inet addr:"'
-```
-
-#### Get container IP addresses (with net-tools install)
-
-```
-docker exec -it <id/name> sh -c 'apt-get update && apt-get install -y net-tools && ifconfig  | grep -B 1 "inet addr:"'
+docker inspect --format '{{ .NetworkSettings.IPAddress }}' <id/name>
 ```
 
