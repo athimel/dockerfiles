@@ -20,6 +20,10 @@ RUN ln -s /etc/nginx/sites-available/some-site /etc/nginx/sites-enabled/some-sit
 # Create test file
 RUN echo "<?php phpinfo(); ?>" > /var/www/html/taiste.php
 
+# Increase upload size
+RUN sed -e 's/post_max_size = 8M/post_max_size = 800M/g' -i /etc/php5/fpm/php.ini
+RUN sed -e 's/upload_max_filesize = 2M/upload_max_filesize = 200M/g' -i /etc/php5/fpm/php.ini
+
 # Create start script
 RUN echo "#!/bin/bash" > /root/run.sh
 RUN echo "/usr/sbin/service php5-fpm start" >> /root/run.sh
