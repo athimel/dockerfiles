@@ -10,7 +10,7 @@ Just like anybody, here is the dockerfiles I use
 docker ps
 ```
 
-#### Run bash
+#### Run bash in a running container
 
 ```
 docker exec -it <id/name> bash
