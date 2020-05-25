@@ -4,7 +4,7 @@ MAINTAINER Arnaud Thimel <a.thimel@gmail.com>
 ENV DEBIAN_FRONTEND noninteractive
 
 # Install Nginx and php7.3-fpm.
-RUN apt-get update && apt-get install -y nginx php7.3-fpm php7.3-gd php7.3-xml && apt-get clean
+RUN apt-get update && apt-get install -y nginx php7.3-fpm php7.3-gd php7.3-mbstring php7.3-xml && apt-get clean
 
 # Prevent to start nginx as a deamon
 RUN echo "daemon off;" >> /etc/nginx/nginx.conf
